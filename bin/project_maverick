@@ -2,4 +2,4 @@
 
 require_relative "../lib/project_maverick.rb"
 
-puts "hello"
+CLI.new.run 
