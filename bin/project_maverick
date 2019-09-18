@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/project_maverick.rb"
+require_relative '../lib/project_maverick'
 
-CLI.new.run 
+ProjectMaverick::CLI.new.call 
