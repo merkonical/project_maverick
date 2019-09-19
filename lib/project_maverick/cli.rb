@@ -13,7 +13,56 @@ class ProjectMaverick::CLI
     
     print_dpschart(input)
     
+    puts ""
+    puts "What class specialization do you want DPS information on?"
+    input = get.strip
     
+    class_spec_dps = ProjectMaverick::WowDps
+    
+    print_class_spec_dps(class_spec_dps)
+    
+    puts ""
+    puts "Would you like to see another class specialization? Enter Y or N"
+    
+    input = gets.strip.downcase 
+    if input == "y"
+      start 
+    elsif input == "n"
+      puts ""
+      puts "Ok, goodbye!"
+      exit 
+    else
+      puts ""
+      puts "That is not a choice."
+      start 
+    end 
   end 
   
+  def print_class_spec_dps(class_spec_dps)
+    
 end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
