@@ -5,9 +5,9 @@ class ProjectMaverick::WowDps
 
   def self.new_from_index_page(d)
     self.new(
-       r.css("pos").text,
-      "https://www.noxxic.com/wow/dps-rankings/#{r.css("a").attribute("href").text}",
-      r.css("val").text,
+       d.css("pos").text,
+      "https://www.noxxic.com/wow/dps-rankings/#{d.css("a").attribute("href").text}",
+      d.css("val").text,
       )
   end
 

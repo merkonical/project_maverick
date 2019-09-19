@@ -45,16 +45,6 @@ class ProjectMaverick::CLI
     puts "Class specialization:      #{class_spec_dps.class_spec}"
     puts "Highest DPS:      #{class_spec_dps.best_dps}"
   end 
-  
-  def print_dpschart(from_number)
-    puts ""
-     puts "---------- DPS Chart #{from_number} - #{from_number+9} ----------"
-    puts ""
-    ProjectMaverick::WowDps.all[from_number-1, 10].each.with_index(from_number) do |dpschart, index|
-      puts "#{index}. #{dpschart.name} - #{dpschart.value}"
-    end 
-  end 
-    
 end 
 
 

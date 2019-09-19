@@ -5,12 +5,13 @@ class ProjectMaverick::Scraper
   end 
   
   def scrape_dpschart_index
-    self.get_page.css("ul class wow-rankings")
+    self.get_page.css("ul.wow-rankings")
+    
   end 
   
   def make_dpschart
     scrape_dpschart_index.each do |d|
-      ProjectMaverick::WowDps.new_from_index(d)
+      ProjectMaverick::WowDps.new_from_index_page(d)
     end 
   end
 
