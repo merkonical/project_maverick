@@ -6,4 +6,14 @@ class ProjectMaverick::CLI
     start 
   end 
   
+  def start 
+    puts ""
+    puts "What rank number do you want to see? 1-24?"
+    input = gets.strip.to_i
+    
+    print_dpschart(input)
+    
+    
+  end 
+  
 end 

@@ -1,11 +1,11 @@
 class ProjectMaverick::Scraper
   
   def get_page
-    Nokogiri::HTML(open(""))
+    Nokogiri::HTML(open("https://www.noxxic.com/wow/dps-rankings/"))
   end 
   
   def scrape_dpschart_index
-    self.get_page.css("")
+    self.get_page.css("ul class wow-rankings")
   end 
   
   def make_dpschart
