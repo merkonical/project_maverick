@@ -1,18 +1,22 @@
 class ProjectMaverick::Scraper
   
-  def get_page
-    Nokogiri::HTML(open("https://www.noxxic.com/wow/dps-rankings/"))
-  end 
+  html = open("https://www.noxxic.com/wow/dps-rankings/")
   
-  def scrape_dpschart_index
-    self.get_page.css("ul.wow-rankings")
-    
-  end 
-  
-  def make_dpschart
-    scrape_dpschart_index.each do |d|
-      ProjectMaverick::WowDps.new_from_index_page(d)
-    end 
-  end
+  doc = Nokogiri::HTML(html)
 
+  position = doc.css('span.pos')[0..4].text.split('')
+  
+  druid = doc.css('span.ranking-item')[0].text[1..13]
+  
+  warlock_aff = doc.css('span.ranking-item')[1].text[1..18]
+  
+  dem_warlock = doc.css('span.ranking-item')[2].text[1..18]
+  
+  mage = doc.css('span.ranking-item')[3].text[1..10]
+  
+  hunter = doc.css('span.ranking-item')[4].text[1..19]
+  
+  binding.pry
+  
+  doc.css('span.val')[0..4].text.gsub("DPS","").split
 end 
