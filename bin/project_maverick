@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/project_maverick'
+require "bundler/setup"
+require "project_maverick"
 
 ProjectMaverick::CLI.new.call 
